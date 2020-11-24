@@ -7,7 +7,7 @@ function createTerms(props) {
     <Term
       name={props.name}
       emoji={props.emoji}
-      key={props.key}
+      key={props.id}
       meaning={props.meaning}
     />
   );
