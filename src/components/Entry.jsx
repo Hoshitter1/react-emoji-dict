@@ -2,19 +2,19 @@ import React from "react";
 import Term from "./Terms";
 import emojis from "../emojipedia";
 
-function createTerms(props) {
-  return (
-    <Term
-      name={props.name}
-      emoji={props.emoji}
-      key={props.id}
-      meaning={props.meaning}
-    />
-  );
-}
-
 function Entry() {
-  return <dl className="dictionary">{emojis.map(createTerms)}</dl>;
+  return (
+    <dl className="dictionary">
+      {emojis.map((emoji) => (
+        <Term
+          name={emoji.name}
+          emoji={emoji.emoji}
+          key={emoji.id}
+          meaning={emoji.meaning.substring(0, 100)}
+        />
+      ))}
+    </dl>
+  );
 }
 
 export default Entry;
